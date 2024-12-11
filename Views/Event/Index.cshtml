@@ -1,0 +1,32 @@
+@model IEnumerable<mvc.Models.Event>
+
+<h1>Liste des événements</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Titre</th>
+            <th>Date</th>
+            <th>Lieu</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var ev in Model)
+        {
+            <tr>
+                <td>@ev.Id</td>
+                <td>@ev.Title</td>
+                <td>@ev.EventDate.ToShortDateString()</td>
+                <td>@ev.Location</td>
+                <td>
+                    <a asp-action="Details" asp-route-id="@ev.Id" class="btn btn-info">Détails</a>
+                    <a asp-action="Edit" asp-route-id="@ev.Id" class="btn btn-warning">Modifier</a>
+                    <a asp-action="Delete" asp-route-id="@ev.Id" class="btn btn-danger">Supprimer</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+<a asp-action="Create" class="btn btn-primary">Créer un événement</a>

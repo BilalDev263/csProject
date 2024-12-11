@@ -1,0 +1,11 @@
+@model mvc.Models.Event
+
+<h1>Supprimer l'événement</h1>
+
+<p>Es-tu sûr de vouloir supprimer cet événement ?</p>
+<p><strong>@Model.Title</strong></p>
+<form asp-action="DeleteConfirmed" method="post">
+    <input type="hidden" asp-for="Id" />
+    <button type="submit" class="btn btn-danger">Supprimer</button>
+    <a asp-action="Index" class="btn btn-primary">Annuler</a>
+</form>
