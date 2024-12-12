@@ -21,7 +21,7 @@ namespace mvc.Models
         public DateTime EventDate { get; set; }
 
         [Required]
-        [Range(10, 200)]
+        [Range(2, 200)]
         [Display(Name = "Nombre maximum de participants")]
         public int MaxParticipants { get; set; }
 
