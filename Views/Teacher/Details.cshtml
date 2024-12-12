@@ -1,0 +1,22 @@
+@model mvc.Models.Teacher
+
+<h1>Détails de l'enseignant</h1>
+<table class="table">
+    <tr>
+        <th>Prénom</th>
+        <td>@Model.Firstname</td>
+    </tr>
+    <tr>
+        <th>Nom</th>
+        <td>@Model.Lastname</td>
+    </tr>
+    <tr>
+        <th>Email</th>
+        <td>@Model.Email</td>
+    </tr>
+    <tr>
+        <th>Site personnel</th>
+        <td>@Model.PersonalWebSite</td>
+    </tr>
+</table>
+<a asp-action="Index" class="btn btn-primary">Retour</a>

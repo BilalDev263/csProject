@@ -4,7 +4,7 @@
 
 <p>Es-tu sûr de vouloir supprimer cet événement ?</p>
 <p><strong>@Model.Title</strong></p>
-<form asp-action="DeleteConfirmed" method="post">
+<form asp-action="Delete" method="post">
     <input type="hidden" asp-for="Id" />
     <button type="submit" class="btn btn-danger">Supprimer</button>
     <a asp-action="Index" class="btn btn-primary">Annuler</a>

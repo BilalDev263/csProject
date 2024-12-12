@@ -1,0 +1,29 @@
+@model mvc.Models.StudentViewModel
+
+<h1>Modifier un étudiant</h1>
+
+<form asp-action="Edit" method="post">
+    <div class="form-group">
+        <label asp-for="Lastname"></label>
+        <input asp-for="Lastname" class="form-control" />
+        <span asp-validation-for="Lastname" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Age"></label>
+        <input asp-for="Age" class="form-control" />
+        <span asp-validation-for="Age" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Specialite"></label>
+        <select asp-for="Specialite" class="form-control" asp-items="Html.GetEnumSelectList<mvc.Models.Specialite>()"></select>
+        <span asp-validation-for="Specialite" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="AdmissionDate"></label>
+        <input asp-for="AdmissionDate" class="form-control" type="date" />
+        <span asp-validation-for="AdmissionDate" class="text-danger"></span>
+    </div>
+    <button type="submit" class="btn btn-primary">Enregistrer</button>
+</form>
+
+<a asp-action="Index" class="btn btn-secondary">Annuler</a>

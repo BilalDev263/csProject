@@ -1,7 +1,5 @@
 using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
-
-// une directive qui permet d'importer les classes du namespace mvc.Models
 using mvc.Models;
 
 namespace mvc.Controllers;

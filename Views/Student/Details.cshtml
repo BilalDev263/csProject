@@ -1,0 +1,26 @@
+@model mvc.Models.Student
+
+<h1>Détails de l'étudiant</h1>
+<table class="table">
+    <tr>
+        <th>Prénom</th>
+        <td>@Model.Firstname</td>
+    </tr>
+    <tr>
+        <th>Nom</th>
+        <td>@Model.Lastname</td>
+    </tr>
+    <tr>
+        <th>Âge</th>
+        <td>@Model.Age</td>
+    </tr>
+    <tr>
+        <th>Spécialité</th>
+        <td>@Model.Specialite</td>
+    </tr>
+    <tr>
+        <th>Date d'admission</th>
+        <td>@Model.AdmissionDate.ToShortDateString()</td>
+    </tr>
+</table>
+<a asp-action="Index" class="btn btn-primary">Retour</a>

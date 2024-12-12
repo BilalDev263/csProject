@@ -23,7 +23,7 @@ builder.Services.AddIdentity<Teacher, IdentityRole>(options =>
 
 var app = builder.Build();
 
-// Méthode pour configurer les rôles et l'utilisateur initial
+// Méthode pour configurer les rôles et utilisateurs initiaux
 async Task CreateRoles(IServiceProvider serviceProvider)
 {
     var roleManager = serviceProvider.GetRequiredService<RoleManager<IdentityRole>>();
@@ -60,7 +60,6 @@ async Task CreateRoles(IServiceProvider serviceProvider)
         }
     }
 }
-
 
 using (var scope = app.Services.CreateScope())
 {

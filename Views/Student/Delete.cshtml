@@ -1,0 +1,30 @@
+@model mvc.Models.Student
+
+<h1>Supprimer l'étudiant</h1>
+<p>Êtes-vous sûr de vouloir supprimer cet étudiant ?</p>
+<table class="table">
+    <tr>
+        <th>Prénom</th>
+        <td>@Model.Firstname</td>
+    </tr>
+    <tr>
+        <th>Nom</th>
+        <td>@Model.Lastname</td>
+    </tr>
+    <tr>
+        <th>Âge</th>
+        <td>@Model.Age</td>
+    </tr>
+    <tr>
+        <th>Spécialité</th>
+        <td>@Model.Specialite</td>
+    </tr>
+    <tr>
+        <th>Date d'admission</th>
+        <td>@Model.AdmissionDate.ToShortDateString()</td>
+    </tr>
+</table>
+<form asp-action="DeleteConfirmed" asp-route-id="@Model.Id" method="post">
+    <button type="submit" class="btn btn-danger">Supprimer</button>
+    <a asp-action="Index" class="btn btn-secondary">Annuler</a>
+</form>

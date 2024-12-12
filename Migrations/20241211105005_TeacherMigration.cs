@@ -87,7 +87,7 @@ namespace mvc.Migrations
                         .Annotation("MySql:CharSet", "utf8mb4"),
                     Age = table.Column<int>(type: "int", nullable: false),
                     GPA = table.Column<double>(type: "double", nullable: false),
-                    Major = table.Column<int>(type: "int", nullable: false),
+                    Specialite = table.Column<int>(type: "int", nullable: false),
                     AdmissionDate = table.Column<DateTime>(type: "datetime(6)", nullable: false)
                 },
                 constraints: table =>

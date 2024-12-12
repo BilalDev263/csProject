@@ -1,0 +1,43 @@
+@model mvc.Models.StudentViewModel
+
+<h1>Ajouter un étudiant</h1>
+
+<form asp-action="Add" method="post">
+    <div class="form-group">
+        <label asp-for="Firstname"></label>
+        <input asp-for="Firstname" class="form-control" />
+        <span asp-validation-for="Firstname" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Lastname"></label>
+        <input asp-for="Lastname" class="form-control" />
+        <span asp-validation-for="Lastname" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Age"></label>
+        <input asp-for="Age" class="form-control" type="number" />
+        <span asp-validation-for="Age" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Specialite"></label>
+        <select asp-for="Specialite" class="form-control" asp-items="Html.GetEnumSelectList<mvc.Models.Specialite>()"></select>
+        <span asp-validation-for="Specialite" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="AdmissionDate"></label>
+        <input asp-for="AdmissionDate" class="form-control" type="date" />
+        <span asp-validation-for="AdmissionDate" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Email"></label>
+        <input asp-for="Email" class="form-control" type="email" />
+        <span asp-validation-for="Email" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Password"></label>
+        <input asp-for="Password" class="form-control" type="password" />
+        <span asp-validation-for="Password" class="text-danger"></span>
+    </div>
+    <button type="submit" class="btn btn-primary">Créer</button>
+</form>
+<a asp-action="Index" class="btn btn-secondary">Retour</a>

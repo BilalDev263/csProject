@@ -1,8 +1,33 @@
-@{
-    ViewData["Title"] = "Home Page";
-}
+@model IEnumerable<mvc.Models.Student>
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="hattps://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-</div>
+<h1>Liste des étudiants</h1>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Prénom</th>
+            <th>Nom</th>
+            <th>Âge</th>
+            <th>Spécialité</th>
+            <th>Date d'admission</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var student in Model)
+        {
+            <tr>
+                <td>@student.Firstname</td>
+                <td>@student.Lastname</td>
+                <td>@student.Age</td>
+                <td>@student.Specialite</td>
+                <td>@student.AdmissionDate.ToShortDateString()</td>
+                <td>
+                    <a asp-action="Details" asp-route-id="@student.Id" class="btn btn-info">Détails</a>
+                    <a asp-action="Edit" asp-route-id="@student.Id" class="btn btn-warning">Modifier</a>
+                    <a asp-action="Delete" asp-route-id="@student.Id" class="btn btn-danger">Supprimer</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+<a asp-action="Add" class="btn btn-primary">Ajouter un étudiant</a>

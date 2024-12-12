@@ -1,25 +1,25 @@
 using System.ComponentModel.DataAnnotations;
+using Microsoft.AspNetCore.Identity;
 
-namespace mvc.Models
+namespace mvc.Models;
+
+public class Teacher : IdentityUser
 {
-    public class TeacherViewModel
-    {
-        [Required]
-        public string Firstname { get; set; }
+    // [Required(ErrorMessage = "L'identifiant est obligatoire")]
+    // [Display(Name = "Identifiant")]
+    // public int Id { get; set; }
 
-        [Required]
-        public string Lastname { get; set; }
+    [StringLength(20, MinimumLength = 5)]
+    public string Lastname { get; set; }
+    public string Firstname { get; set; }
 
-        [Required]
-        [EmailAddress]
-        public string Email { get; set; }
+    // [Required]
+    // [EmailAddress]
+    // public string Email { get; set; }
 
-        [Url]
-        public string? PersonalWebSite { get; set; }
+    [Required]
+    [Url]
+    public string PersonalWebSite { get; set; }
 
-        [Required]
-        [DataType(DataType.Password)]
-        [StringLength(100, MinimumLength = 8, ErrorMessage = "Le mot de passe doit contenir au moins 8 caractères.")]
-        public string Password { get; set; }
-    }
+
 }

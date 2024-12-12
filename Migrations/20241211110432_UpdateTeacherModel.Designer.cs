@@ -182,7 +182,7 @@ namespace mvc.Migrations
                         .IsRequired()
                         .HasColumnType("longtext");
 
-                    b.Property<int>("Major")
+                    b.Property<int>("Specialite")
                         .HasColumnType("int");
 
                     b.HasKey("Id");
